@@ -1,26 +1,35 @@
-import java.util.Random;
+ import java.util.Random; 
+    import java.util.Scanner; 
 
-public class DiceGame {
+    public class DiceGame {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
-        Random random = new Random();
+            System.out.println("What is your name?"); 
+            String userName = scanner.nextLine(); 
+            System.out.println("Hello, " + userName + "!");
 
-        System.out.println("Rolling dice..."); 
+           
+            Random random = new Random();
 
-        int die1 = random.nextInt(6) + 1;
-        System.out.println("Die 1: " + die1); 
+            System.out.println("Rolling dice..."); 
 
-        int die2 = random.nextInt(6) + 1;
-        System.out.println("Die 2: " + die2); 
+        
+            int die1 = random.nextInt(6) + 1;
+            System.out.println("Die 1: " + die1); 
 
-        int total = die1 + die2;
-        System.out.println("Total value: " + total); 
+            int die2 = random.nextInt(6) + 1;
+            System.out.println("Die 2: " + die2);
+            int total = die1 + die2;
+            System.out.println("Total value: " + total); 
 
-         if (total > 7) {
-                System.out.println("You won!");
+       
+            if (total > 7) {
+                System.out.println(userName + " won!"); 
             } else {
-                System.out.println("You lost!"); 
+                System.out.println(userName + " lost!"); 
             }
+            scanner.close(); 
+        }
     }
-}
